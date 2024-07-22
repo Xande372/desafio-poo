@@ -1,28 +1,15 @@
 package br.com.desafio.dominio;
 
-public class Curso {
+public class Curso extends Conteudo{
 
-    private String title;
-    private String description;
+    // atributos: 
     private int courseLoad;
     
+    // construtor: 
     public Curso() {
     }
-    
-    public String getTitle() {
-        return title;
-    }
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
-    public String getDescription() {
-        return description;
-    }
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
+    // getters and setters: 
     public int getCourseLoad() {
         return courseLoad;
     }
@@ -30,8 +17,13 @@ public class Curso {
         this.courseLoad = courseLoad;
     }
 
+    // métodos: 
+    public double calculateXp() {
+        return XP_STANDARD * courseLoad;
+    }
+
     @Override
     public String toString() {
-        return "Curso [ title= " + title + ", description= " + description + ", courseLoad= " + courseLoad + " ]";
+        return "Curso [ title= " + getTitle() + ", description= " + getDescription() + ", courseLoad= " + courseLoad + " ]";
     }
 }
